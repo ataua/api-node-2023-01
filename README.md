@@ -11,8 +11,8 @@
 
 ---
 # DESAFIO testetecnico 2023
-Olá. Eu sou o Atauã, e este projeto é uma solução de um teste tçnico para a vaga de desenvolvedor back-end na empresa *******.  
-Como era um teste técnico que pode ser utilizado por outros candidatos, por uma questão de sigilo, tentei retirar qualquer informação sobre a empresa. Se você encontrar alguma informação que tenha passado, por favor me avise.
+Olá. Eu sou o Atauã, e este projeto é uma solução de um teste ténico para a vaga de desenvolvedor back-end na empresa *******.  
+Como era um teste técnico que pode ser utilizado por outros candidatos, por uma questão de sigilo, tentei retirar qualquer informação sobre a empresa ou que remetesse aos requisitos do teste. Se você encontrar alguma informação que tenha passado, por favor me avise.
 
 ---
 # INSTALANDO E RODANDO O PROJETO:
