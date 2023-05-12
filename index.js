@@ -29,7 +29,8 @@ app.use( '/api/v1/projetos', projetoRoute )
 app.use( '/api/v1/tarefas', tarefaRoute )
 
 app.use( ( error, req, res, next ) => {
-    res.status( 400 ).json( { error: error.message } )
+    const statusCode = error.statusCode || 500;
+    res.status( statusCode ).json( {error: error.message} )
 } )
 
 app.listen( APP_PORT, APP_HOST, () => {

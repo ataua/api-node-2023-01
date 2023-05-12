@@ -35,7 +35,7 @@ Isso irá deletar todos os dados criados pelo Docker para esse projeto.
 
 Se quiser acessar o banco de dados através de um GUI, acesse o Adminer no endereço `localhost:8080` em um navegador, com as seguintes configurações:  
 - Sistema: **PostgreSQL**
-- servidor: **db_pg**
+- servidor: **teste-db_pg**
 - Usuário: **postgres**
 - Senha: **postgres**
 - Base de dados: **postgres**
@@ -346,7 +346,7 @@ HTTP/1.1 200 OK
 
 ---
 # TRATAMENTO DE ERROS E EXCESSÕES  
-Os erros gerados nas requisições, referentes a falhas na aplicação ou na rede, são tratados pelo Express, retornando apenas uma mensagem de erro nas respostas das requisições, sempre com o status 400 -- o que não é o ideal, mas foi uma forma genérica e rápida de tratar os erros nesse projeto.  
+Os erros gerados nas requisições, referentes a falhas na aplicação ou na rede, são tratados pelo Express, retornando uma mensagem de erro nas respostas das requisições.  
 Os erros referentes ao conteúdo das requisições foram tratados da seguinte forma:  
 
 1. Criação de novo projeto com nome já utilizado em outro projeto:
@@ -411,5 +411,16 @@ HTTP/1.1 400 Bad Request
 
 {
   "error": "No data was provided for update. The accepted parameters are: 'descricao', 'dataLimite', 'status' or 'projetoId'. All are optional, but you must provide at least one of them."
+}
+```
+
+7. Recurso não encontrado, como solicitação de um projeto com um ID que não existe:
+
+```json
+HTTP/1.1 404 Not Found
+...
+
+{
+  "error": "There is no projeto with the 'projetoId' 123."
 }
 ```

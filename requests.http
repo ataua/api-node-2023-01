@@ -9,7 +9,7 @@ POST {{host}}/projetos
 Content-Type: application/json
 
     {
-        "nome": "Um primeiro projeto 2",
+        "nome": "Um primeiro projeto 3",
         "descricao": "Descrição do primeiro projeto"
     }
 
@@ -19,7 +19,7 @@ GET {{host}}/projetos
 
 ###
 # Listar um único projeto
-GET {{host}}/projetos/3
+GET {{host}}/projetos/4
 
 ###
 # Editar projeto
@@ -33,7 +33,7 @@ Content-Type: application/json
 
 ###
 # Deletar projeto
-DELETE {{host}}/projetos/3
+DELETE {{host}}/projetos/33
 
 ###
 # Adicionar tarefa a um projeto
