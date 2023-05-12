@@ -1,0 +1,70 @@
+@host = http://localhost:3000/api/v1
+@descricaoProjeto = "Descrição do projeto"
+@descricaoProjeto1 = "Descrição atualizada do projeto"
+@descricaoTarefa = "Descrição da tarefa"
+
+###
+# Criar projeto
+POST {{host}}/projetos
+Content-Type: application/json
+
+    {
+        "nome": "Um primeiro projeto 2",
+        "descricao": "Descrição do primeiro projeto"
+    }
+
+###
+# Listar todos os projetos
+GET {{host}}/projetos
+
+###
+# Listar um único projeto
+GET {{host}}/projetos/3
+
+###
+# Editar projeto
+PATCH {{host}}/projetos
+Content-Type: application/json
+
+{
+    "projetoId": 3,
+    "nome": "Nome de projeto alterado"
+}
+
+###
+# Deletar projeto
+DELETE {{host}}/projetos/3
+
+###
+# Adicionar tarefa a um projeto
+POST {{host}}/tarefas
+Content-Type: application/json
+
+{
+    "projetoId": 3,
+    "descricao": "Uma tarefa maneira",
+    "dataLimite": "05/13/2023",
+    "status": "aguardando"
+}
+
+###
+# Listar tarefas de um projeto
+GET {{host}}/projetos/3/tarefas
+
+###
+# Editar tarefa
+# opções de status: "aguardando" - "executando" - "concluída" - "cancelada"
+PATCH {{host}}/tarefas
+Content-Type:  application/json
+
+{
+    "tarefaId": 4,
+    "status": "concluída"
+}
+
+###
+# Deletar tarefa
+DELETE {{host}}/tarefas/1
+
+###
+GET {{host}}/tarefas/

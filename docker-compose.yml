@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+    db_pg:
+        image: postgres:15.2-alpine
+        container_name: db_pg
+        ports:
+            - "5432:5432"
+        expose:
+          - 5432
+        restart: always
+        env_file:
+            - .env
+        environment:
+            PGDATA: /data/db-data
+        networks:
+            - testetecnico2023
+        volumes:
+            - db-data:/data/db-data
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8080:8080"
+        networks:
+            - testetecnico2023
+        depends_on:
+            - db_pg
+
+networks:
+    testetecnico2023:
+        driver: bridge
+
+volumes:
+    db-data:
+        driver: local
