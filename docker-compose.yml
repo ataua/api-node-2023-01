@@ -10,7 +10,7 @@ services:
           - 5432
         restart: always
         env_file:
-            - .env
+            - .env.dev
         environment:
             PGDATA: /data/db-data
         networks:
