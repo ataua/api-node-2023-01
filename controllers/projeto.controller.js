@@ -50,8 +50,8 @@ const updateProjetoController = async (req, res, next) => {
 const deleteProjetoController = async (req, res, next) => {
     try {
         const { id } = req.params
-        const data = await projetoService.deleteProjetoService(id)
-        res.status(200).json({ data });
+        await projetoService.deleteProjetoService(id)
+        res.status(204);
     } catch (error) {
         next(error);
     }

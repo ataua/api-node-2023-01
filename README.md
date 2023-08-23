@@ -209,21 +209,8 @@ HTTP/1.1 200 OK
 Response:
 
 ```json
-HTTP/1.1 200 OK
-...
-
-{
-  "data": {
-    "projetoId": 10,
-    "nome": "Um primeiro projeto 2",
-    "descricao": "Descrição do primeiro projeto",
-    "createdAt": "2023-03-10T13:20:23.381Z",
-    "updatedAt": "2023-03-10T13:20:23.381Z"
-  }
-}
+HTTP/1.1 204 No Content
 ```
-
-Normalmente, a opção DELETE não retorna nenhum dado. Optei por retornar o objeto do elemento deleteado, tanto para conferência do resultado, quanto para disponibilizar o recurso para o caso de ser utilizado em outro ambiente.  
 
 - Adicionar tarefa a um projeto  
 
@@ -328,20 +315,7 @@ DELETE http://localhost:3000/api/v1/tarefas/6
 Response:
 
 ```json
-HTTP/1.1 200 OK
-...
-
-{
-  "data": {
-    "tarefaId": 6,
-    "descricao": "Uma tarefa maneira",
-    "dataLimite": "2023-05-13",
-    "status": "aguardando",
-    "projetoId": 9,
-    "createdAt": "2023-03-10T13:36:09.387Z",
-    "updatedAt": "2023-03-10T13:36:09.387Z"
-  }
-}
+HTTP/1.1 204 No Content
 ```
 
 ---

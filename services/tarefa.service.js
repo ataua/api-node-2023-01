@@ -36,7 +36,7 @@ const updateTarefaService = async (tarefa) => {
 }
 
 const deleteTarefaService = async (id) => {
-    return await tarefaRepository.deleteTarefa(id)
+    await tarefaRepository.deleteTarefa(id)
 }
 
 export default {

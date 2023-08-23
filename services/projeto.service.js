@@ -31,7 +31,7 @@ const updateProjetoService = async (projeto) => {
 }
 
 const deleteProjetoService = async (id) => {
-    return await projetoRepository.deleteProjeto(id)
+    await projetoRepository.deleteProjeto(id)
 }
 
 export default {

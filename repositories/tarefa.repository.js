@@ -30,16 +30,11 @@ const getTarefa = async (id) => {
 
 const deleteTarefa = async (id) => {
     try {
-        const current = await getTarefa(id)
-        if (!current) {
-            throw ({ statusCode: 404, message: `There is no tarefa with id ${ id }` })
-        }
         await Tarefa.destroy({
             where: {
                 tarefaId: id
             }
         })
-        return current
     } catch (error) {
         throw error
     }

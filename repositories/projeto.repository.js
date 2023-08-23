@@ -44,10 +44,6 @@ const getProjeto = async (id) => {
 
 const deleteProjeto = async (id) => {
     try {
-        const current = await getProjeto(id)
-        if (!current) {
-            throw ({ statusCode: 404, message: `There is no projeto with id ${ id }` })
-        }
         await Projeto.destroy({
             where: {
                 projetoId: id
