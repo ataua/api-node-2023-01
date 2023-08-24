@@ -3,18 +3,20 @@ dotenv.config()
 
 import Sequelize from 'sequelize'
 
-const user = process.env.POSTGRES_USER
-const password = process.env.POSTGRES_PASSWORD
-const host = process.env.POSTGRES_HOST
-const database = process.env.POSTGRES_DB
-const port = process.env.POSTGRES_PORT
+const { 
+    POSTGRES_DB, 
+    POSTGRES_USER,
+    POSTGRES_PASSWORD,
+    POSTGRES_HOST,
+    POSTGRES_PORT 
+} = process.env
 
 const db = new Sequelize(
-    database, user, password,
-    { 
-        dialect: 'postgres', 
-        host: host,
-        port: port,
+    POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD,
+    {
+        dialect: 'postgres',
+        host: POSTGRES_HOST,
+        port: POSTGRES_PORT,
     }
 )
 
